@@ -459,3 +459,8 @@ page**:
 Приложение запускается
 
 ![](./media/image69.png)
+
+
+Зайти на портал и открыть Reception вкладку:
+
+https://samruktest-gdpazdel.workzone.cfapps.eu10.hana.ondemand.com/site#workzone-home&/home
