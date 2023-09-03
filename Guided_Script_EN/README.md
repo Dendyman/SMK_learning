@@ -59,7 +59,9 @@ In this step, we will focus on connecting our application to data sources. Follo
    ![](./media/image9.png)
 
 3. Insert the link to the description of our API services (\$metadata) from the API server:
-   [](https://afanasevdm-cfruntime-371tohiy-dev-dbapi-fiori-srv.cfapps.us10.hana.ondemand.com/service/catalog/$metadata)
+
+   https://afanasevdm-cfruntime-371tohiy-dev-dbapi-fiori-srv.cfapps.us10.hana.ondemand.com/service/catalog/$metadata
+   
    Then click **Verify URL**:
    ![](./media/image10.png)
 
