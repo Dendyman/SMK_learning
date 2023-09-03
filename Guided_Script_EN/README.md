@@ -36,8 +36,11 @@ On the left, you will find elements that can be added to the canvas. On the righ
 In summary, building your application involves:
 
 \- Defining connections to data sources and application variables.
+
 \- Designing UI elements.
+
 \- Implementing logic for the selected elements.
+
 
 # Шаг 3 «Архитектура приложения: подключение к данным»: 
 
