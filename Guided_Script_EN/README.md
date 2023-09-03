@@ -42,7 +42,7 @@ In summary, building your application involves:
 \- Implementing logic for the selected elements.
 
 
-# Step 3 "Application Architecture: Data Connectivity":
+# Step 3 "Building the app: connecting to Data":
 
 In this step, we will focus on connecting our application to data sources. Follow the instructions below:
 
@@ -61,7 +61,7 @@ In this step, we will focus on connecting our application to data sources. Follo
 3. Insert the link to the description of our API services (\$metadata) from the API server:
 
    https://afanasevdm-cfruntime-371tohiy-dev-dbapi-fiori-srv.cfapps.us10.hana.ondemand.com/service/catalog/$metadata
-   
+
    Then click **Verify URL**:
    ![](./media/image10.png)
 
