@@ -42,7 +42,40 @@ In summary, building your application involves:
 \- Implementing logic for the selected elements.
 
 
-# Шаг 3 «Архитектура приложения: подключение к данным»: 
+# Step 3 "Application Architecture: Data Connectivity":
+
+In this step, we will focus on connecting our application to data sources. Follow the instructions below:
+
+1. Navigate to the **DATA** tab:
+   ![](./media/image8.png)
+
+2. In the SAP Build Apps classic data entities section, create definitions for two API calls of type OData Integration:
+
+   - One API call is for retrieving data about a request by its UUID, which is read from a QR code.
+   
+   - The other API call is for uploading an image to the Blob table using the UUID from a QR code.
+
+   To create these API calls, select the **OData Integration** type:
+   ![](./media/image9.png)
+
+3. Insert the link to the description of our API services (\$metadata) from the API server:
+   [](https://afanasevdm-cfruntime-371tohiy-dev-dbapi-fiori-srv.cfapps.us10.hana.ondemand.com/service/catalog/$metadata)
+   Then click **Verify URL**:
+   ![](./media/image10.png)
+
+4. The configurator, using the metadata information, has identified 2 entities: **Request** and **Blobstorage**. Activate both of them:
+   ![](./media/image11.png)
+
+5. For these entities, settings for standard access methods (GET, POST, UPDATE, etc.) will appear. Save the configurations by clicking **SAVE DATA RESOURCES**:
+   ![](./media/image12.png)
+
+6. As a result, the project will now have access methods defined for the 2 API server entities: **Request** (a table of requests) and **Blobstorage** (a table of blob objects with UUIDs from requests).
+
+   The outcome should look like this:
+   ![](./media/image13.png)
+
+
+# Step 3 «Building the app: connecting to Data»: 
 
 Пройдем во вкладку **DATA**:
 
