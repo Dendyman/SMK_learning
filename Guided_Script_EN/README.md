@@ -76,54 +76,23 @@ In this step, we will focus on connecting our application to data sources. Follo
    The outcome should look like this:
    ![](./media/image13.png)
 
+# Step 4 «Building the app: creating UI pages»:
 
-# Step 3 «Building the app: connecting to Data»: 
+In accordance with the application architecture, we need to create two application pages: "Home Page" and "Photo Page." Follow the steps below to create these pages:
 
-Пройдем во вкладку **DATA**:
+1. Click on the link labeled "Home Page":
+   ![Home Page Link](./media/image14.png)
 
-![](./media/image8.png)
+2. The configurator will open, and you need to add the second page. Click on **ADD NEW PAGE**:
+   ![Add New Page](./media/image15.png)
 
-Далее в секции SAP Build Apps classic data entities создадим определение
-2х API вызовов типа OData Integration.
+3. In the window that appears, enter the page name as "**Photo Page**" and then click **OK**:
+   ![Enter Page Name](./media/image16.png)
 
-\- Один - API вызов для получения данных о заявке на проход по UUID,
-считанного из QR кода.
+4. The newly created page will open. Click **SAVE** to save your changes:
+   ![Save Page](./media/image17.png)
 
-\- Второй - API вызов для загрузки изображения в Blob таблицу по UUID,
-считанного из QR кода.
-
-Для этого выберем **OData Integration** тип:
-
-![](./media/image9.png)
-
-Вставим ссылку описания наших API сервисов (\$metadata) от сервера API:
-
-<https://afanasevdm-cfruntime-371tohiy-dev-dbapi-fiori-srv.cfapps.us10.hana.ondemand.com/service/catalog/$metadata>
-
-нажмем **Verify URL**:
-
-![](./media/image10.png)
-
-Конфигуратор по описанию metadata информации распознал 2 сущности:
-**Request, Blobstorage**, активируем обе:
-
-![](./media/image11.png)
-
-Для сущностей появляются элементы настройки стандартных методов доступа
-к ним (GET, POST, UPDATE и т.д.). Сохраняем конфигурации нажатием SAVE
-DATA RESOURCES:
-
-![](./media/image12.png)
-
-В результате у нас появились в проекте описанные методы доступа к 2
-сущностям API сервера: Request (таблица заявок) и Blobstorage (таблица
-blob объектов c UUID заявки).
-
-Результат:
-
-![](./media/image13.png)
-
-# Шаг 4 «Архитектура приложения: создание страниц приложения»:
+# Step 4 «Building the app: creating UI pages»:
 
 Согласно архитектуре приложения, нужно создать 2 страницы приложения
 «Home Page» и "Photo Page". Для этого кликните по ссылке "Home Page":
