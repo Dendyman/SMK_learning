@@ -214,7 +214,7 @@ Align the text to the center by changing the properties of the text field as sho
 
 ![Text Alignment](./media/image41.png)
 
-Next, add new elements to the canvas of the "Photo page":
+Next, add new elements to the canvas of the "**Photo page**":
 
 - Image
 
@@ -222,11 +222,11 @@ Next, add new elements to the canvas of the "Photo page":
 
 - Button 2
 
-Change the labels for the buttons as shown in the image:
+Change the *label* property for the buttons as shown in the image:
 
 ![Button Labels](./media/image42.png)
 
-For the Image element, bind the **Source** property of the image to the **PAGE VARIABLE: photo_path**:
+For the *Image* element, bind the **Source** property of the image to the **PAGE VARIABLE: photo_path**:
 
 ![Image Source](./media/image43.png)
 
@@ -239,9 +239,9 @@ And center-align the image:
 ![Image Alignment](./media/image45.png)
 
 
-# Step 8 «Building the app: processing logic of the second page -- "take photo" button»:
+# Step 8 «Building the app: adding processing logic of the second page -- "take photo" button»:
 
-Select the "Take a photo" button and open the logic panel by clicking on **Marketplace**:
+Select the "**Take a photo**" button and open the logic panel by clicking on **Marketplace**:
 
 ![Take a Photo Button](./media/image46.png)
 
@@ -257,27 +257,27 @@ Afterward, the element will appear in the **INSTALLED** tab:
 
 ![Installed Component](./media/image49.png)
 
-Now, let's assemble the following elements on the logic canvas for the button's functionality:
+Now, let's drag and drop the following elements to the logic canvas for the button's functionality:
 
-DEVICE: take photo
+**DEVICE: take photo**
 
-VARIABLES: set page variable
+**VARIABLES: set page variable**
 
-VARIABLES: set page variable
+**VARIABLES: set page variable**
 
-DIALOG: Alert
+**DIALOG: Alert**
 
 Connect them as shown in the image:
 
 ![Connect Elements](./media/image50.png)
 
-For one variable assignment element, link it to the **mimeType** output of the **Take photo** element and the page variable **mimetype**:
+For one variable, link it to the **mimeType** output of the **Take photo** element and the page variable **mimetype**:
 
 ![Assign MimeType](./media/image51.png)
 
 Then, save your changes.
 
-For the second variable assignment element, configure it to assign the page variable **photo_path** with the output of the **Take photo -- path** block:
+For the second variable, configure it to assign the page variable **photo_path** with the output of the **Take photo -- path** block:
 
 ![Assign Photo Path](./media/image52.png)
 
@@ -293,13 +293,13 @@ Finally, save your project:
 
 # Step 9 «Building the app: processing logic of the second page -- "upload to system" button»: 
 
-Select the "Upload to system" button and open the button's logic panel. Next, add the following elements to the panel:
+Select the "**Upload to system**" button and open the button's logic panel. Next, add the following elements to the panel:
 
-- MEDIA: Convert file to base64 (to serialize the photo into a text sequence and save it as a BLOB in the database field)
-- VIEW: Show spinner (to freeze the screen while the converter and database upload process is running)
-- VIEW: Show spinner (to unfreeze the screen in the case of success or error)
-- DATA: Create record (to pass image parameters to the API and save them in the database)
-- DIALOG: Alert (to display messages about the success or failure of the process)
+- **MEDIA: Convert file to base64** (to serialize the photo into a text sequence and save it as a BLOB in the database field)
+- **VIEW: Show spinner** (to freeze the screen while the converter and database upload process is running)
+- **VIEW: Show spinner** (to unfreeze the screen in the case of success or error)
+- **DATA: Create record** (to pass image parameters to the API and save them in the database)
+- **DIALOG: Alert** (to display messages about the success or failure of the process)
 
 Connect them as shown in the image:
 
@@ -310,7 +310,7 @@ Specify the file URL for conversion from **PAGE VARIABLE photo_path**:
 
 ![Convert File URL](./media/image56.png)
 
-For the Create Record element, choose the resource name: Blobstorage:
+For the Create Record element, choose the resource name: **Blobstorage**:
 
 ![Resource Name](./media/image57.png)
 
@@ -322,7 +322,7 @@ For the **Record** field, choose "**Object with properties**" and set the follow
 
 ![Record Field](./media/image58.png)
 
-For the Alert element for successful record creation in the database, display a success message - ***Uploaded***:
+For the **Alert** element for successful record creation in the database, display a success message - ***Uploaded***:
 
 ![Success Alert](./media/image59.png)
 
