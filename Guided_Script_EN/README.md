@@ -22,16 +22,16 @@ Choose **Build an Application**.\
 Next, select **Web & Mobile Application**\
 ![Name the project](./media/image5.png)
 
-For the *Project Name*, specify a name based on your user, such as **mob_app_ws_user(?),** add a comment in the description, and then click **Create** to initiate working on your application.\
+For the *Project Name*, specify a name based on your user, such as **mobile_app_ws_user(?),** add a comment in the description, and then click **Create** to start working on your application.\
 \
 ![](./media/image6.png)
 
 # Step 2 «Opening the Project, Home Page»: 
 
-Upon completing Step 1, you will be redirected to the Build Apps Composer editor, which serves as a kind of IDE (Integrated Development Environment) for SAP Build Apps. On the canvas, you can already see the initial **Home page** of your application with fields for the title and text:\
+Upon completing Step 1, you will be redirected to the Build Apps Composer editor, which is a kind of IDE (Integrated Development Environment) for SAP Build Apps. On the canvas, you can already see the initial **Home page** of your application with fields for the title and text:\
 ![](./media/image7.png)
 
-On the left, you will find elements that can be added to the canvas. On the right, there is a properties panel for the selected element, and at the bottom right, you will find the structure of elements on the canvas. Below, there is a panel for adding logic to the elements.
+On the left, you will find elements that can be added to the canvas. On the right, there is a properties panel for the selected element, and at the bottom right, you will find the tree of elements on the canvas. Below, there is a panel for adding logic to the elements.
 
 In summary, building your application involves:
 
@@ -68,19 +68,19 @@ In this step, we will focus on connecting our application to data sources. Follo
 4. The configurator, using the metadata information, has identified 2 entities: **Request** and **Blobstorage**. Activate both of them:
    ![](./media/image11.png)
 
-5. For these entities, settings for standard access methods (GET, POST, UPDATE, etc.) will appear. Save the configurations by clicking **SAVE DATA RESOURCES**:
+5. For these entities, settings for standard access methods (GET, POST, UPDATE, etc.) will appear. Save the default settigs by clicking **SAVE DATA RESOURCES**:
    ![](./media/image12.png)
 
-6. As a result, the project will now have access methods defined for the 2 API server entities: **Request** (a table of requests) and **Blobstorage** (a table of blob objects with UUIDs from requests).
+6. As a result, the project will now have defined access methods for the 2 API services: **Request** (a table of requests) and **Blobstorage** (a table of blob objects with UUIDs from requests).
 
    The outcome should look like this:
    ![](./media/image13.png)
 
-# Step 4 «Building the app: creating UI pages»:
+# Step 4 «Building the app: creating app pages»:
 
-In accordance with the application architecture, we need to create two application pages: "Home Page" and "Photo Page." Follow the steps below to create these pages:
+In accordance with the application architecture, we need to create two application pages: "**Home Page**" and "**Photo Page**." Follow the steps below to create these pages:
 
-1. Click on the link labeled "Home Page":
+1. Click on the link labeled "**Home Page**":
    ![Home Page Link](./media/image14.png)
 
 2. The configurator will open, and you need to add the second page. Click on **ADD NEW PAGE**:
@@ -95,13 +95,13 @@ In accordance with the application architecture, we need to create two applicati
 
 # Step 5 «Building the app: adding UI elements to the first page»:
 
-Navigate to the first page of the application by clicking on **Home page** in the navigation link, and then on the actual "Home page" itself (you may need to click **SAVE** if the previous changes were not saved):
+Navigate to the first page of the application by clicking on **Home page** in the navigation link, and then on the actual "**Home page**" itself (you may need to click **SAVE** if the previous changes were not saved):
 
 ![Navigation to Home Page](./media/image18.png)
 
 ![Home Page](./media/image19.png)
 
-Select the *Headerline* and change the text to the following: "***Hover over the QR code in the application***":
+Select the *Headerline* and change the text to the following: "***Point the camera at QR-code***":
 
 ![Headerline](./media/image20.png)
 
@@ -380,7 +380,7 @@ The application will launch:
 
 6. Access the portal and open the **Reception** tab:
 
-[Reception Portal](https://samruktest-gdpazdel.workzone.cfapps.eu10.hana.ondemand.com/site#workzone-home&/home)
+[Reception Portal](https://samruktest-gdpazdel.workzone.cfapps.eu10.hana.ondemand.com/site#workzone-home&/workpages/rYR9XbhxTRa1KE6OapUqCe)
 
 In the list, find your request, enter it, scan the QR code on your mobile device, and take a photo.
 
