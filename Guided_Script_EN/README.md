@@ -117,9 +117,9 @@ Add a **Button** element to the canvas of the first page from the left-side elem
 
 ![Add Button Element](./media/image23.png)
 
-# Step 6 «Building the app: building processing logic of the first step»:
+# Step 6 «Building the app: adding processing logic of the first page»:
 
-Let's define the variable **uuid_var** as an App Variable with the type *"**any text**"*, where the UUID of the request will be stored. To do this, switch to **VIEW -- VARIABLES**:
+Let's define the variable **uuid_var** as an *App Variable* with the type *"**any text**"*, where the UUID of the request will be stored. To do this, switch to **VIEW -- VARIABLES**:
 
 ![Define Variable](./media/image24.png)
 
@@ -127,7 +127,7 @@ Save your changes using **SAVE**.
 
 Navigate back to the first page of the application, "**Home page**," by switching to **VIEW -- VARIABLES**.
 
-Select the **Scan QR** button and open the **Add logic to "Button 1"** panel at the bottom of the screen:
+Select the **Scan QR** button and open the **Show logic for "BUTTON 1"** panel at the bottom of the screen:
 
 ![Button Logic](./media/image25.png)
 
@@ -149,7 +149,7 @@ Connect these elements as shown in the diagram:
 
 ![Logic Diagram](./media/image26.png)
 
-In the **Variables: Set app variable** logic block, assign the value from the **Scan QR/barcode** block to the **uuid_var** App Variable by selecting the variable in the **Variable name** field:
+In the **"Variables: Set app variable"** logic block, assign the value from the **"Scan QR/barcode"** logic block to the **uuid_var** App Variable by selecting the variable in the **Variable name** field:
 
 ![Set Variable Value](./media/image27.png)
 
@@ -161,13 +161,13 @@ Next, choose **Scan QR/barcode** under **Select logic node**, **Scan QR/barcode 
 
 ![Assign QR Output](./media/image29.png)
 
-To read data using the **Get record** method, using the decrypted UUID value stored in the **uuid_var** variable, fill in the parameters of the block as follows:
+To read data using the **"Data: Get record"** logic block, using the decoded UUID value stored in the **uuid_var** variable, fill in the parameters of the block as follows:
 
-\- API call from the **Request** resource:
+Maintain **Resource Name** as follows to make an API call to **Request** resource:
 
 ![Get Record API](./media/image30.png)
 
-The Id parameter is filled with the variable:
+The **Id** parameter is filled with the variable:
 
 ![Id Parameter](./media/image31.png)
 
@@ -190,7 +190,7 @@ Save all changes in the project using the **SAVE** button:
 
 # Step 7 «Building the app: adding data variables and UI elements of the second page»:
 
-Navigate to the "Photo page":
+Navigate to the "**Photo page**":
 
 ![Photo Page](./media/image36.png)
 
@@ -198,7 +198,7 @@ Switch to the **VARIABLES** mode and add 2 variables, **name** and **surname**, 
 
 ![Page Parameters](./media/image37.png)
 
-Go to the **PAGE VARIABLES** tab and create 2 more variables to store the captured photo with their respective data types (mimetype -- text; photo_path -- local file system path):
+Go to the **PAGE VARIABLES** tab and create 2 more variables to store the captured photo with their respective data types (*mimetype -- text; photo_path -- local file system path*):
 
 ![Page Variables](./media/image38.png)
 
