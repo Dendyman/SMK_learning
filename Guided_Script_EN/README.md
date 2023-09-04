@@ -92,77 +92,46 @@ In accordance with the application architecture, we need to create two applicati
 4. The newly created page will open. Click **SAVE** to save your changes:
    ![Save Page](./media/image17.png)
 
-# Step 4 «Building the app: creating UI pages»:
 
-Согласно архитектуре приложения, нужно создать 2 страницы приложения
-«Home Page» и "Photo Page". Для этого кликните по ссылке "Home Page":
+# Step 5 «Building the app: adding UI elements to the first page»:
 
-![](./media/image14.png)
+Navigate to the first page of the application by clicking on **Home page** in the navigation link, and then on the actual "Home page" itself (you may need to click **SAVE** if the previous changes were not saved):
 
-Откроется конфигуратор, где необходимо добавить вторую страницу, кликнув
-на **ADD NEW PAGE**:
+![Navigation to Home Page](./media/image18.png)
 
-![](./media/image15.png)
+![Home Page](./media/image19.png)
 
-В открывшемся окне введите название страницы «**Photо page**», далее
-**OK**:
+Select the *Headerline* and change the text to the following: "***Hover over the QR code in the application***":
 
-![](./media/image16.png)
+![Headerline](./media/image20.png)
 
-В результате откроется вновь созданная страница, нажмите SAVE:
+In the **LAYOUT** tab, under the **LAYOUT** section, choose center alignment:
 
-![](./media/image17.png)
+![Center Alignment](./media/image21.png)
 
-# Шаг 5 «Архитектура приложения: добавление элементов первой странички»:
+Remove the second **Text 1** element:
 
-Переходим на первую страницу приложения, кликнув **Home page** по
-навигационной ссылке и потом по самой страничке **Home page**: (может
-потребоваться нажать SAVE, если предыдущие изменения не были сохранены)
+![Remove Text Element](./media/image22.png)
 
-![](./media/image18.png)
+Add a **Button** element to the canvas of the first page from the left-side element library under the **CORE** tab. Change the button's label to ***"Scan QR"***:
 
-![](./media/image19.png)
+![Add Button Element](./media/image23.png)
 
-Выберите *Headerline* и измените текст на следующий «***Наведите на QR
-код заявки в приложении***»:
+# Step 6 «Building the app: building processing logic of the first step»:
 
-![](./media/image20.png)
+Let's define the variable **uuid_var** as an App Variable with the type *"**any text**"*, where the UUID of the request will be stored. To do this, switch to **VIEW -- VARIABLES**:
 
-В **LAYOUT** вкладке свойств в разделе **LAYOUT** выберите выравнивание
-по центру:
+![Define Variable](./media/image24.png)
 
-![](./media/image21.png)
+Save your changes using **SAVE**.
 
-и удалите второй **Text 1** элемент:
+Navigate back to the first page of the application, "**Home page**," by switching to **VIEW -- VARIABLES**.
 
-![](./media/image22.png)
+Select the **Scan QR** button and open the **Add logic to "Button 1"** panel at the bottom of the screen:
 
-Добавьте элемент **Button** на канву первой странички из библиотеки
-элементов слева, вкладка **CORE**. поменяйте название кнопки на ***"Scan
-QR"***:
+![Button Logic](./media/image25.png)
 
-![](./media/image23.png)
-
-# Шаг 6 «Архитектура приложения: добавление логики первой странички»:
-
-Определим переменную **uuid_var** уровня App Variable с типом *"**any
-text**"*, куда будет считан UUID заявки, переключив **VIEW --
-VARIABLES**:
-
-![](./media/image24.png)
-
-Сохраним изменения через **SAVE**
-
-Перейдем на первую страницу приложения "**Home page**", переключив
-**VIEW -- VARIABLES**.
-
-Выберем кнопку **Scan QR**, откроем панель **Add logic to "Button 1"**
-внизу экрана:
-
-![](./media/image25.png)
-
-и разместим в открывшейся панели следующие элементы с панели **Logic
-CORE** слева:
+In the opened panel, add the following elements from the **Logic CORE** panel on the left:
 
 #### Device: Scan QR/barcode
 
@@ -176,137 +145,119 @@ CORE** слева:
 
 #### Dialog: Alert
 
-И соединим их как показано на рисунке:
+Connect these elements as shown in the diagram:
 
-![](./media/image26.png)
+![Logic Diagram](./media/image26.png)
 
-В логическом блоке **Variables: Set app variable** присвоим переменной
-**uuid_var** уровня App Variable считанное и дешифрованное значение из
-блока **Scan QR/barcode** привязав значение переменной в поле **Variable
-name**:
+In the **Variables: Set app variable** logic block, assign the value from the **Scan QR/barcode** block to the **uuid_var** App Variable by selecting the variable in the **Variable name** field:
 
-![](./media/image27.png)
+![Set Variable Value](./media/image27.png)
 
-И присвоив значение вывода предыдущего блока, кликнув на иконку под
-**Assigned value** и выбрав **Output value of another node**:
+Assign the output value of the previous block by clicking on the icon under **Assigned value** and selecting **Output value of another node**:
 
-![](./media/image28.png)
+![Assign Output Value](./media/image28.png)
 
-Далее выбрать **Scan QR/barcode** у Select logic node, **Scan QR/barcode
-/ QR barcode content** у Select node output, далее кнопка **SAVE**:
+Next, choose **Scan QR/barcode** under **Select logic node**, **Scan QR/barcode / QR barcode content** under **Select node output**, and then click **SAVE**:
 
-![](./media/image29.png)
+![Assign QR Output](./media/image29.png)
 
-Для чтения данных по заявке методом **Get record** используя
-дешифрованное значение UUID, хранящееся в переменной **uuid_var**,
-заполняем параметры блока следующим образом:
+To read data using the **Get record** method, using the decrypted UUID value stored in the **uuid_var** variable, fill in the parameters of the block as follows:
 
-\- API вызов из ресурса **Request**:
+\- API call from the **Request** resource:
 
-![](./media/image30.png)
+![Get Record API](./media/image30.png)
 
-Id параметр заполняется переменной:
+The Id parameter is filled with the variable:
 
-![](./media/image31.png)
+![Id Parameter](./media/image31.png)
 
-Далее **App Variables**, дальше выбираем переменную **uuid_var** и жмем
-**SAVE**:
+Next, under **App Variables**, choose the **uuid_var** variable and click **SAVE**:
 
-![](./media/image32.png)
+![Variable Selection](./media/image32.png)
 
-Для первого элемента **Alert** задаем текст «**cannot read QR**» вывода
-при неудачном чтении QR кода:
+For the first **Alert** element, set the text as "**cannot read QR**" for unsuccessful QR code reading:
 
-![](./media/image33.png)
+![First Alert](./media/image33.png)
 
-Для второго **Alert** аналогично задаем сообщение неуспешного чтения из
-API -- "**request not found**":
+Similarly, for the second **Alert**, set the message for unsuccessful reading from the API as "**request not found**":
 
-![](./media/image34.png)
+![Second Alert](./media/image34.png)
 
-Сохраняем все изменения в проекте через кнопку SAVE:
+Save all changes in the project using the **SAVE** button:
 
-![](./media/image35.png)
+![Save Project](./media/image35.png)
 
-# Шаг 7 «Архитектура приложения: добавление переменных и элементов второй странички»:
 
-Переходим на страницу Photo page:
+# Step 7 «Building the app: adding data variables and UI elements of the second page»:
 
-![](./media/image36.png)
+Navigate to the "Photo page":
 
-Переключитесь в режим **VARIABLES** и добавьте 2 переменные **name** и
-**surname** как параметры страницы на вкладке **PAGE PARAMETERS**:
+![Photo Page](./media/image36.png)
 
-![](./media/image37.png)
+Switch to the **VARIABLES** mode and add 2 variables, **name** and **surname**, as page parameters on the **PAGE PARAMETERS** tab:
 
-Перейдите на вкладку **PAGE VARIABLES** и создайте еще 2 переменные для
-хранения сделанной фотографии с соответствующими типами данных (mimetype
--- text; photo_path -- local file system path):
+![Page Parameters](./media/image37.png)
 
-![](./media/image38.png)
+Go to the **PAGE VARIABLES** tab and create 2 more variables to store the captured photo with their respective data types (mimetype -- text; photo_path -- local file system path):
 
-Перейдите в режим VIEW и удалите **Headline** элемент. А для текстового
-элемента задайте свойство Content в виде формулы со значением
-**JOIN(\[\"Сделайте фото для \", params.name, params.surname\], \'
-\')**:
+![Page Variables](./media/image38.png)
 
-![](./media/image39.png)
+Switch to the VIEW mode and remove the **Headline** element. For the text element, set the Content property as a formula with the value **JOIN(\["Take a photo for ", params.name, params.surname\], ' ')**:
 
-Сохраните результат
+![Text Element](./media/image39.png)
 
-![](./media/image40.png)
+Save the result:
 
-Расположите текст по центру, поменяв свойства тестового поля как на
-картинке **LAYOUT -\> Text Align -\> center**:
+![Save Result](./media/image40.png)
 
-![](./media/image41.png)
+Align the text to the center by changing the properties of the text field as shown: **LAYOUT -> Text Align -> center**:
 
-Далее добавьте на канву страницы **Photo page** новые элементы:
+![Text Alignment](./media/image41.png)
 
-\- Image
+Next, add new elements to the canvas of the "Photo page":
 
-\- Button 1
+- Image
 
-\- Button 2
+- Button 1
 
-И поменяйте label для кнопок как на картинке:
+- Button 2
 
-![](./media/image42.png)
+Change the labels for the buttons as shown in the image:
 
-Для элемента Image увяжите свойство **Source** картинки с переменной
-**PAGE VARIABLE: photo_path**:
+![Button Labels](./media/image42.png)
 
-![](./media/image43.png)
+For the Image element, bind the **Source** property of the image to the **PAGE VARIABLE: photo_path**:
 
-Далее поменяйте размеры картинки на фиксированные:
+![Image Source](./media/image43.png)
 
-![](./media/image44.png)
+Then, set fixed dimensions for the image:
 
-И расположите картинку по центру:
+![Image Dimensions](./media/image44.png)
 
-![](./media/image45.png)
+And center-align the image:
 
-# Шаг 8 «Архитектура приложения: добавление логики работы второй странички -- кнопка take photo»:
+![Image Alignment](./media/image45.png)
 
-Выберем кнопку take a photo и откроем панель добавления логики и кликнем
-на **Marketplace**:
 
-![](./media/image46.png)
+# Step 8 «Building the app: processing logic of the second page -- "take photo" button»:
 
-В поле поиска напишем «covert file to base64» и выберем найденный
-элемент:
+Select the "Take a photo" button and open the logic panel by clicking on **Marketplace**:
 
-![](./media/image47.png)
+![Take a Photo Button](./media/image46.png)
 
-Далее установим компонент нажав **INSTALL**:
+In the search field, type "convert file to base64" and select the found element:
 
-![](./media/image48.png)
+![Search and Select Element](./media/image47.png)
 
-После этого, элемент появится во вкладке INSTALLED:
+Next, install the component by clicking **INSTALL**:
 
-![](./media/image49.png)
+![Install Component](./media/image48.png)
 
-Далее соберем следующие элементы на канве логики работы кнопки:
+Afterward, the element will appear in the **INSTALLED** tab:
+
+![Installed Component](./media/image49.png)
+
+Now, let's assemble the following elements on the logic canvas for the button's functionality:
 
 DEVICE: take photo
 
@@ -316,152 +267,122 @@ VARIABLES: set page variable
 
 DIALOG: Alert
 
-И свяжем как на картинке:
+Connect them as shown in the image:
 
-![](./media/image50.png)
+![Connect Elements](./media/image50.png)
 
-Один элемент присвоения переменной увяжем с **mimeType** вывода элемента
-**Take photo** и переменной страницы **mimetype**:
+For one variable assignment element, link it to the **mimeType** output of the **Take photo** element and the page variable **mimetype**:
 
-![](./media/image51.png)
+![Assign MimeType](./media/image51.png)
 
-И сохранить.
+Then, save your changes.
 
-Во втором элементе настроить присвоение страничной переменной
-**photo_path** с выводом блока **Take photo -- path**:
+For the second variable assignment element, configure it to assign the page variable **photo_path** with the output of the **Take photo -- path** block:
 
-![](./media/image52.png)
+![Assign Photo Path](./media/image52.png)
 
-И сохранить.
+Save your changes.
 
-Для элемента **DIALOG: Alert** задайте текст "**failed to take photo**":
+For the **DIALOG: Alert** element, set the text to "**failed to take photo**":
 
-![](./media/image53.png)
+![Alert Text](./media/image53.png)
 
-Сохраните проект:
+Finally, save your project:
 
-![](./media/image54.png)
+![Save Project](./media/image54.png)
 
-# Шаг 9 «Архитектура приложения: добавление логики работы второй странички -- кнопка upload to system»: 
+# Step 9 «Building the app: processing logic of the second page -- "upload to system" button»: 
 
-Выберем кнопку Upload to system и откроем панель логики работы кнопки.
-Далее добавим след элементы на панель:
+Select the "Upload to system" button and open the button's logic panel. Next, add the following elements to the panel:
 
-\- MEDIA: Convert file to base64 (чтобы сериализовать фото в
-последовательность текста и сохоанить в виде BLOB в поле таблицы в БД)
+- MEDIA: Convert file to base64 (to serialize the photo into a text sequence and save it as a BLOB in the database field)
+- VIEW: Show spinner (to freeze the screen while the converter and database upload process is running)
+- VIEW: Show spinner (to unfreeze the screen in the case of success or error)
+- DATA: Create record (to pass image parameters to the API and save them in the database)
+- DIALOG: Alert (to display messages about the success or failure of the process)
 
-\- VIEW: Show spinner (чтобы заморозить экран на время работы конвертера
-и загрузки в БД)
+Connect them as shown in the image:
 
-\- VIEW: Show spinner (чтобы разморозить экран в случ успеха или ошибки)
+![Connect Elements](./media/image55.png)
 
-\- DATA: Create record (чтобы передать в API параметры картинки и
-сохранить в БД)
+Next, for the **Convert file to base64** element, set the following parameters:
+Specify the file URL for conversion from **PAGE VARIABLE photo_path**:
 
-\- DIALOG: Alert (чтобы вывести сообщения об успехе или ошибки работы
-процесса)
+![Convert File URL](./media/image56.png)
 
-И увяжем их соответствующим образом:
+For the Create Record element, choose the resource name: Blobstorage:
 
-![](./media/image55.png)
+![Resource Name](./media/image57.png)
 
-Далее для элемента **Convert file to base64** зададим след параметры:
-URL файла для конверсии укажем из **PAGE VARIABLE photo_path**:
+For the **Record** field, choose "**Object with properties**" and set the following values:
 
-![](./media/image56.png)
+- Bind the **mimetype** field to the **mimetype** variable of type **PAGE VARIABLE**
+- Bind the **req_uuid** field to the **uuid_var** variable of type **APP VARIABLE**
+- Bind the **Imagedata** field to the output of the previous converter element, **Convert file to Base64 / Base64 text**
 
-Для элемента Create Record выберем resource name: Blobstorage:
+![Record Field](./media/image58.png)
 
-![](./media/image57.png)
+For the Alert element for successful record creation in the database, display a success message - ***Uploaded***:
 
-А для поля **Record** выберем «**Object with properties**» и зададим
-след значения:
+![Success Alert](./media/image59.png)
 
-\- поле **mimetype** увязать с переменной **mimetype** типа **PAGE
-VARIABLE**
+In case of unsuccessful database entry, display a message -- ***Failed to Upload***:
 
-\- поле **req_uuid** увязать с переменной **uuid_var** типа **APP
-VARIABLE**
+![Failure Alert](./media/image60.png)
 
-\- поле **Imagedata** увязать с выводом предыдущего элемента-конвертора
-**Convert file to Base64 / Base64 text**
+For unsuccessful image conversion, display a message -- ***failed to convert***:
 
-![](./media/image58.png)
+![Conversion Alert](./media/image61.png)
 
-Для Alert успешного создание записи в БД выводим сообщение успеха -
-***Uploaded***:
+Save your entire project:
 
-![](./media/image59.png)
+![Save Project](./media/image62.png)
 
-В случае неуспешной записи в БД выводим сообщение -- ***Failed to
-Upload***:
+# Step 10 «Building the app: linking parameters' transition between the pages»: 
 
-![](./media/image60.png)
+Open the **Home page** and select the **Scan QR** button. Open the button's logic panel and choose the **NAVIGATION: Open page** block. In the **page** property (the next opened page), specify the **Photo page**:
 
-В случае неуспешной ковертации изображения выводим сообщение --
-***failed to convert***:
+![Open Page](./media/image63.png)
 
-![](./media/image61.png)
+Then, link the required parameters of the opened page (**PAGE PARAMETERS** defined for **Photo page** earlier) to the returned result of the **API Get record** for the **Request** entity:
 
-Сохраняем весть проект:
+![Link Parameters](./media/image64.png)
 
-![](./media/image62.png)
+Save your changes.
 
-# Шаг 10 «Архитектура приложения: увяжем передачу параметров между страницами»: 
+Save your entire project:
 
-Откроем страницу **Home page** и выберем кнопку **Scan QR**, откроем
-панель логики работы кнопки и выберем блок **NAVIGATION: Open page**. В
-свойстве page (следующей открываемой страницы) укажем страницу **Photo
-page**:
+![Save Project](./media/image62.png)
 
-![](./media/image63.png)
+# Step 11 «Testing the app on your device»:
 
-А требуемые параметры открываемой страницы (**PAGE PARAMETERS**
-определенные для **Photo page** ранее) увяжем с возвращенным результатом
-работы **API Get record** к сущности **Request**:
+1. Install the **SAP Build Apps** application from the App Store or Google Play Store.
 
-![](./media/image64.png)
+2. Go to the Launch tab in your application project, then click **OPEN PREVIEW PORTAL**:
 
-И сохранить.
+![Open Preview Portal](./media/image65.png)
 
-Сохраняем весть проект:
+3. On your mobile phone, open the **SAP Build Apps** application, and choose to sign in via SAP Build Apps:
 
-![](./media/image62.png)
+![Sign In](./media/image66.png)
 
-# Шаг 11 «Запуск приложения в тестовом режиме на телефоне»:
+4. Enter the 6-digit code on the portal in your browser and click **Confirm**:
 
-1.  Устанавливаем приложение **SAP Build Apps** из Appstore или Google
-    Store
+![Confirm Code](./media/image67.png)
 
-2.  Переходим на вкладку Launch в проекте приложения, далее **OPEN
-    PREVIEW PORTAL**:
+5. In the mobile application, find your project in the list of Apps and click **Open**:
 
-![](./media/image65.png)
+![Open Project](./media/image68.png)
 
-3.  На моб телефоне заходим в приложение **SAP Build Apps**, выбираем
-    вход через SAP Build Apps:
+The application will launch:
 
-![](./media/image66.png)
+![App Launch](./media/image69.png)
 
-4.  Далее 6ти-значный код вводим на портале в браузере и жмем
-    **Confirm**:
+6. Access the portal and open the **Reception** tab:
 
-![](./media/image67.png)
+[Reception Portal](https://samruktest-gdpazdel.workzone.cfapps.eu10.hana.ondemand.com/site#workzone-home&/home)
 
-5.  Далее на мобильном приложении в списке Apps находим свой проект и
-    жмем **Open**:
+In the list, find your request, enter it, scan the QR code on your mobile device, and take a photo.
 
-![](./media/image68.png)
+As a result, the photo will appear in the receptionist's application on the portal.
 
-Приложение запускается
-
-![](./media/image69.png)
-
-
-6.  Зайдите на портал и откройте **Reception** вкладку:
-
-https://samruktest-gdpazdel.workzone.cfapps.eu10.hana.ondemand.com/site#workzone-home&/home
-
-в списке найдите свою заявку, провалитесь в нее, считайте QR code на мобильном устройстве и сделайте фото
-
-в результате фото появится на приложении ресепшеониста на портале.
