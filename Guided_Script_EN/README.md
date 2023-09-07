@@ -202,7 +202,10 @@ Go to the **PAGE VARIABLES** tab and create 2 more variables to store the captur
 
 ![Page Variables](./media/image38.png)
 
-Switch to the VIEW mode and remove the **Headline** element. For the text element, set the Content property as a formula with the value **JOIN(\["Take a photo for ", params.name, params.surname\], ' ')**:
+Switch to the VIEW mode and remove the **Headline** element.
+![Text Element](./media/image38_2.png)
+
+For the text element, set the Content property as a formula with the value **JOIN(\["Take a photo for ", params.name, params.surname\], ' ')**:
 
 ![Text Element](./media/image39.png)
 
