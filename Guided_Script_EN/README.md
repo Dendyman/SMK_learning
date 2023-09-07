@@ -378,11 +378,11 @@ Save your entire project:
 
 5. In the mobile application, find your project in the list of Apps and click **Open**:
 
-![Open Project](./media/image68.png)
+![Open Project](./media/image68.png = 300x200)
 
 The application will launch:
 
-![App Launch](./media/image69.png)
+![App Launch](./media/image69.png = 300x200)
 
 6. Access the portal and open the **Reception** tab:
 
